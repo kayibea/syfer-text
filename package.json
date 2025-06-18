@@ -1,0 +1,29 @@
+{
+  "name": "syfer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://kayibea.github.io/syfer",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "publish": "gh-pages -d dist"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}
