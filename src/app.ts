@@ -31,7 +31,7 @@ async function decryptText() {
   }
 }
 
-function encode(str: string): Uint8Array {
+function encode(str: string): Uint8Array<ArrayBuffer> {
   return new TextEncoder().encode(str);
 }
 
@@ -52,7 +52,7 @@ function fromBase64(base64: string): ArrayBuffer {
   return bytes.buffer;
 }
 
-async function getKeyFromPassword(password: string, salt: Uint8Array): Promise<CryptoKey> {
+async function getKeyFromPassword(password: string, salt: Uint8Array<ArrayBuffer>): Promise<CryptoKey> {
   const keyMaterial = await crypto.subtle.importKey('raw', encode(password), { name: 'PBKDF2' }, false, ['deriveKey']);
   return crypto.subtle.deriveKey(
     {
