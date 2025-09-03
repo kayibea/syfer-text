@@ -4,6 +4,9 @@ const inputText = document.getElementById('inputText') as HTMLTextAreaElement;
 const keyInput = document.getElementById('key') as HTMLInputElement;
 const outputText = document.getElementById('outputText') as HTMLDivElement;
 
+// const dropzone = document.getElementById('dropzone') as HTMLDivElement;
+// const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+
 const btnEncrypt = document.getElementById('encrypt') as HTMLButtonElement;
 const btnDecrypt = document.getElementById('decrypt') as HTMLButtonElement;
 
@@ -94,6 +97,27 @@ async function decryptAES(encryptedBase64: string, password: string): Promise<st
 
   return decode(plaintextBuffer);
 }
+
+// dropzone.addEventListener('click', () => fileInput.click());
+
+// dropzone.addEventListener('dragover', (e) => {
+//   e.preventDefault();
+//   dropzone.classList.add('dragover');
+// });
+
+// dropzone.addEventListener('dragleave', () => {
+//   dropzone.classList.remove('dragover');
+// });
+
+// dropzone.addEventListener('drop', (e) => {
+//   e.preventDefault();
+//   dropzone.classList.remove('dragover');
+//   const files = e.dataTransfer?.files;
+//   if (files && files.length) {
+//     fileInput.files = files;
+//     console.log('File dropped:', files[0].name);
+//   }
+// });
 
 btnEncrypt.addEventListener('click', encryptText);
 btnDecrypt.addEventListener('click', decryptText);
