@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #ffffff;
   color: #202122;
   padding: 2rem;
@@ -39,7 +45,7 @@ textarea {
 button {
   padding: 0.4rem 1rem;
   font-size: 1rem;
-  background: #f8f9fa;
+  background-color: #f8f9fa;
   border: 1px solid #a2a9b1;
   cursor: pointer;
 }
@@ -49,7 +55,7 @@ button:hover {
 }
 
 .output {
-  background: #f8f9fa;
+  background-color: #f8f9fa;
   border: 1px solid #a2a9b1;
   padding: 0.75rem;
   font-family: monospace;
@@ -58,6 +64,35 @@ button:hover {
   overflow-wrap: break-word;
   overflow-x: auto;
   max-height: 200px;
+}
+
+.dropzone {
+  border: 2px dashed #a2a9b1;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #555;
+  background: #f8f9fa;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.dropzone:hover {
+  background: #f1f3f5;
+  border-color: #72777d;
+}
+
+.dropzone.dragover {
+  background: #e6f4ff;
+  border-color: #36c;
+  color: #202122;
+}
+
+.dropzone p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
 }
 
 label {
