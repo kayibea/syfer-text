@@ -1,9 +1,9 @@
 {
-  "name": "syfer",
+  "name": "syfer-text",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kayibea.github.io/syfer",
+  "homepage": "https://kayibea.github.io/syfer-text",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
