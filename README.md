@@ -1,4 +1,4 @@
-# Text Encryptor
+# Syfer Text
 
 A simple web app that encrypts text in your browser.
 
