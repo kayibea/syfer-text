@@ -2,17 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/syfer/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/syfer-text/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Text Encryptor</title>
-    <script type="module" crossorigin src="/syfer/assets/index-D4CkjXCU.js"></script>
-    <link rel="stylesheet" crossorigin href="/syfer/assets/index-B0KFVK4y.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Syfer Text</title>
+    <script type="module" crossorigin src="/syfer-text/assets/index-BhhJW9MG.js"></script>
+    <link rel="stylesheet" crossorigin href="/syfer-text/assets/index-CU-TES0_.css">
   </head>
   <body>
-    <h1>Text Encryptor</h1>
+    <h1>Syfer Text</h1>
 
-    <label for="inputText">Text to Encrypt or Decrypt</label>
-    <textarea id="inputText" rows="5" placeholder="Enter your text or ciphertext here..."></textarea>
+    <!-- <div class="dropzone" id="dropzone">
+      <p>Drag & drop a file here, or click to select</p>
+      <input type="file" id="fileInput" hidden />
+    </div> -->
 
     <label for="key">Password</label>
     <input type="text" id="key" placeholder="Enter password" />
@@ -20,7 +25,11 @@
     <div class="buttons">
       <button id="encrypt">Encrypt</button>
       <button id="decrypt">Decrypt</button>
+      <button id="download">Download</button>
     </div>
+
+    <label for="inputText">Text to Encrypt or Decrypt</label>
+    <textarea id="inputText" rows="5" placeholder="Enter your text or ciphertext here..."></textarea>
 
     <label for="outputText">Output</label>
     <div class="output" id="outputText">Encrypted or decrypted result will appear here.</div>
