@@ -15,11 +15,6 @@ Nothing is sent or stored. Just local input and output.
 
 Pre-encrypt text before saving it to a remote bin like Pastebin.
 
-## Tech
-
-- HTML
-- JavaScript (Web Crypto API)
-
 ## License
 
 MIT
