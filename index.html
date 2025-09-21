@@ -2,37 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/syfer-text/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <title>Syfer Text</title>
-    <script type="module" crossorigin src="/syfer-text/assets/index-BhhJW9MG.js"></script>
-    <link rel="stylesheet" crossorigin href="/syfer-text/assets/index-CU-TES0_.css">
+    <script type="module" crossorigin src="/syfer-text/assets/index-CQ26b5Wm.js"></script>
+    <link rel="stylesheet" crossorigin href="/syfer-text/assets/index-TM9MYa_m.css">
   </head>
   <body>
-    <h1>Syfer Text</h1>
+    <div class="container">
+      <h1>Syfer Text</h1>
 
-    <!-- <div class="dropzone" id="dropzone">
-      <p>Drag & drop a file here, or click to select</p>
-      <input type="file" id="fileInput" hidden />
-    </div> -->
+      <label for="key">Password</label>
+      <input autocomplete="off" type="password" id="key" placeholder="Enter password" />
 
-    <label for="key">Password</label>
-    <input type="text" id="key" placeholder="Enter password" />
+      <div class="buttons">
+        <button id="encrypt">Encrypt</button>
+        <button id="decrypt">Decrypt</button>
+      </div>
 
-    <div class="buttons">
-      <button id="encrypt">Encrypt</button>
-      <button id="decrypt">Decrypt</button>
-      <button id="download">Download</button>
+      <label for="inputText">Text to Encrypt or Decrypt</label>
+      <textarea id="inputText" rows="5" placeholder="Enter your text or ciphertext here..."></textarea>
+
+      <label for="outputText">Output</label>
+      <div class="output-container">
+        <div class="output" id="outputText">Encrypted or decrypted result will appear here.</div>
+        <button id="copyOutput" class="btn-secondary">Copy Output</button>
+      </div>
     </div>
-
-    <label for="inputText">Text to Encrypt or Decrypt</label>
-    <textarea id="inputText" rows="5" placeholder="Enter your text or ciphertext here..."></textarea>
-
-    <label for="outputText">Output</label>
-    <div class="output" id="outputText">Encrypted or decrypted result will appear here.</div>
 
   </body>
 </html>
