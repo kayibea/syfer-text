@@ -38,8 +38,9 @@ function handleCopyText() {
   navigator.clipboard
     .writeText(outputText.innerText)
     .then(() => {
+      const defaultTextContent = btnCopy.textContent;
       btnCopy.textContent = 'Copied!';
-      setTimeout(() => (btnCopy.textContent = 'Copy Output'), 2000);
+      setTimeout(() => (btnCopy.textContent = defaultTextContent), 2000);
     })
     .catch((err) => console.error(err));
 }

@@ -1,6 +1,22 @@
 import { IV_LEN, PBKDF2_ITER, SALT_LEN } from '../constants';
 import { decode, encode, fromBase64, toBase64 } from './util';
 
+const deriveKeyAES = async (secret: string, salt: Uint8Array<ArrayBuffer>): Promise<CryptoKey> => {
+  const keyMaterial = await crypto.subtle.importKey('raw', encode(secret), { name: 'PBKDF2' }, false, ['deriveKey']);
+  return crypto.subtle.deriveKey(
+    {
+      name: 'PBKDF2',
+      salt,
+      iterations: PBKDF2_ITER,
+      hash: 'SHA-256',
+    },
+    keyMaterial,
+    { name: 'AES-GCM', length: 256 },
+    false,
+    ['encrypt', 'decrypt'],
+  );
+};
+
 export const encryptAES = async (plaintext: string, password: string): Promise<string> => {
   const iv = crypto.getRandomValues(new Uint8Array(IV_LEN));
   const salt = crypto.getRandomValues(new Uint8Array(SALT_LEN));
@@ -26,20 +42,4 @@ export const decryptAES = async (encryptedBase64: string, password: string): Pro
   const plaintextBuffer = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, aesCryptoKey, data);
 
   return decode(plaintextBuffer);
-};
-
-export const deriveKeyAES = async (secret: string, salt: Uint8Array<ArrayBuffer>): Promise<CryptoKey> => {
-  const keyMaterial = await crypto.subtle.importKey('raw', encode(secret), { name: 'PBKDF2' }, false, ['deriveKey']);
-  return crypto.subtle.deriveKey(
-    {
-      name: 'PBKDF2',
-      salt,
-      iterations: PBKDF2_ITER,
-      hash: 'SHA-256',
-    },
-    keyMaterial,
-    { name: 'AES-GCM', length: 256 },
-    false,
-    ['encrypt', 'decrypt'],
-  );
 };
